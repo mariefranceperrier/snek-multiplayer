@@ -13,6 +13,10 @@ const connect = function () {
     console.log("Successfully connected to game server");
   });
 
+  conn.on("connect", () => {
+    conn.write("Name: MFP");
+  });
+
   conn.on("data", (data) => {
     console.log("Received data from server: ", data);
   });
