@@ -17,27 +17,6 @@ const connect = function () {
     conn.write("Name: MFP");
   });
 
-  // conn.on("data", () => {
-  //   conn.write("Move: up");
-
-    // setTimeout(() => {
-    // conn.write("Move: up");
-    // }, 50);
-
-    // setTimeout(() => {
-    // conn.write("Move: up");
-    // }, 100);
-
-    // setTimeout(() => {
-    // conn.write("Move: up");
-    // }, 150);
-
-  // setInterval(() => {
-  //   conn.write("Move: up");
-  // }, 50);
-  
-// });
-
   conn.on("data", (data) => {
     console.log("Received data from server: ", data);
   });
