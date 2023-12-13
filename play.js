@@ -3,9 +3,10 @@ const { connect } = require("./client");
 const { setupInput } = require("./input");
 
 console.log("Connecting ...");
-connect();
+// connect();
 
-setupInput(connect);
+const conn = connect();
+setupInput(conn);
 
 process.stdout.write('\x07');
 

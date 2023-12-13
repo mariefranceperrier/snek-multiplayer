@@ -16,6 +16,11 @@ const net = require("net");
   conn.on("connect", () => {
     conn.write("Name: MFP");
   });
+  
+  // conn.on("say", () => {
+  //   let message = "I am the snakiest snake of all the snakes!"
+  //   console.log(`Say: ${message}`);
+  // });
 
   conn.on("data", (data) => {
     console.log("Received data from server: ", data);
