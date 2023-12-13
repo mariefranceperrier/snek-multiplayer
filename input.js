@@ -9,27 +9,32 @@ const setupInput = function (conn) {
   stdin.resume();
 
 
-const handleUserInput = function (input) {
-  if (input === '\u0003') {
+  const handleUserInput = function (input) {
+    if (input === '\u0003') {
       process.exit();
     }
-  if (input === "w") {
+    if (input === "w") {
       conn.write("Move: up");
     }
-  if (input === "a") {
+    if (input === "a") {
       conn.write("Move: left");
     }
-  if (input === "s") {
+    if (input === "s") {
       conn.write("Move: down");
     }
-  if (input === "d") {
+    if (input === "d") {
       conn.write("Move: right");
     }
+    if (input === "x") {
+      conn.write("Say: I see you!");
+    };
   };
 
-  stdin.on("data", handleUserInput);
+    stdin.on("data", handleUserInput);
    
-  return stdin;
+    return stdin;
+
 };
 
-module.exports = { setupInput };
+  
+module.exports = { setupInput }
