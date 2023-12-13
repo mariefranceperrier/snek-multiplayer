@@ -8,8 +8,9 @@ const setupInput = function (conn) {
   stdin.setEncoding("utf8");
   stdin.resume();
 
-
   const handleUserInput = function (input) {
+    input = input.toLowerCase();
+
     if (input === '\u0003') {
       process.exit();
     }
@@ -27,14 +28,12 @@ const setupInput = function (conn) {
     }
     if (input === "x") {
       conn.write("Say: I see you!");
-    };
+    }
   };
 
-    stdin.on("data", handleUserInput);
+  stdin.on("data", handleUserInput);
    
-    return stdin;
-
+  return stdin;
 };
 
-  
 module.exports = { setupInput }
